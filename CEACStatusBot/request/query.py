@@ -93,12 +93,14 @@ def query_status(location, application_num, passport_number, surname, captchaHan
             print(e)
             isSuccess = False
             continue
+        print("22222")
 
         soup = BeautifulSoup(r.text, features="lxml")
         status_tag = soup.find("span", id="ctl00_ContentPlaceHolder1_ucApplicationStatusView_lblStatus")
         if not status_tag:
             isSuccess = False
             continue
+        print("33333")
 
         application_num_returned = soup.find("span", id="ctl00_ContentPlaceHolder1_ucApplicationStatusView_lblCaseNo").string
         assert application_num_returned == application_num
