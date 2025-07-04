@@ -52,7 +52,7 @@ def query_status(location, application_num, passport_number, surname, captchaHan
         if not location_value:
             print("Location not found in dropdown options.")
             return {"success": False}
-
+        print("11111")
         # Fill form
         def update_from_current_page(cur_page, name, data):
             ele = cur_page.find(name="input", attrs={"name": name})
